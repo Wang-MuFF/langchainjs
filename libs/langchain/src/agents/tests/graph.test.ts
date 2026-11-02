@@ -366,12 +366,7 @@ describe.each(matrix)(
         middleware: [middleware1, middleware2],
       });
 
-      expect(
-        (await agent.drawMermaid()).replace(
-          "tools(tools<hr/><small><em>__tools = someTool</em></small>)",
-          "tools(tools)"
-        )
-      ).toMatchSnapshot();
+      expect(await agent.drawMermaid()).toMatchSnapshot();
       const fmt = (v?: JumpToTarget[]) =>
         v === undefined
           ? "undefined"
